@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.kidsmath.presentation.screen.fragment.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.kidsmath.presentation.screen.fragment.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_levelFragment"
+            app:destination="@id/levelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.example.kidsmath.presentation.screen.fragment.LevelFragment"
+        android:label="fragment_level"
+        tools:layout="@layout/fragment_level" >
+        <argument
+            android:name="level"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_levelFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.kidsmath.presentation.screen.fragment.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <argument
+            android:name="game"
+            app:argType="com.example.kidsmath.data.room.entity.GameEntity" />
+    </fragment>
+</navigation>
